@@ -93,7 +93,7 @@ var promises = [
     d3.csv('match_map_stats.csv'),
     d3.csv('new_owl_colors.csv')
 ]
-team_names.forEach(name => promises.push(d3.xml(`/owl_logos/${name}.svg`)))
+team_names.forEach(name => promises.push(d3.xml(`${name}.svg`)))
 //'The paths in your SVGs will need to have unique class names or else their styles will overwrite each other.'
 //http://zevross.com/blog/2019/08/20/load-external-svgs-with-d3-v5/
 Promise.all(promises).then(function(rawcsv){
